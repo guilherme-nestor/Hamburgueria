@@ -1,0 +1,155 @@
+/* Responsividade */
+
+/***************************************
+
+X-Small   None	        <576px
+Small	  sm	        ≥576px
+Medium	  md	        ≥768px
+Large	  lg	        ≥992px
+Extra     large	xl	    ≥1200px
+Extra     extra large	xxl	≥1400px
+
+***************************************/
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    @keyframes menuBar {
+        0%{
+            transform: scale(0);
+        }
+        100%{
+            transform: scale(1);
+        } 
+    }
+    .menuHeader{
+        display: none;
+    }
+    .menuBar{
+        display: block;
+    }
+    .threeBar{
+        height: 1.7rem;
+        width: 1.7rem;
+        transition: .2s ease-in-out;
+        animation: menuBar .2s;
+    }
+    .xBar{
+        height: 1.5rem;
+        width: 1.5rem;
+        transition: .2s ease-in-out;
+        animation: menuBar .2s;
+        position: relative;
+        z-index: var(--z-fixed2);
+    }
+    .xBarNone{
+        display: none;
+    }
+    .menu2Header{
+        z-index: var(--z-fixed);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: fixed;
+        background: var(--color-primary);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 16rem;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        border-radius: 1rem;
+        font-size: var(--h2-font-size);
+        transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .menu2Header ul li{
+        margin: 2rem;
+        position: relative;
+    }
+    .navLink::after{
+        font-size: var(--h3-font-size);
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: var(--color-text);
+        position: absolute;
+        left: 0;
+        bottom: -.3rem;
+        transition: width .3s;
+    }
+    .navLink:hover::after{
+        width: 60%;
+    }
+    .menu2HeaderNone{
+        height: 0%;
+        overflow: hidden;
+    }
+    #cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .textAndImgHome{
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    .textHome{
+        text-align: center;
+    }
+    .buttonCardapio{
+        position: relative;
+    }
+    .pTextHome{
+        margin-bottom: 2.5rem;
+    }
+    .popUpPedido{
+        width: 18rem;
+    }
+    .popUpPedidoNone{
+        padding: 0;
+        width: 0%;
+    }
+    .header, .footer{
+        width: 100%;
+        padding: 0 2.5rem;
+    }
+    .main{
+        width: 100%;
+    }
+    .cardPromotion img{
+        height: 140px;
+        width: 140px;
+    }
+    .cardPromotion h2{
+        margin-top: 120px;
+    }
+    .promocoes, .contato{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1199.99px) {
+    :root{
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+.displayNone{
+    display: none;
+}
