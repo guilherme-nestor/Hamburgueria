@@ -44,15 +44,6 @@ fecharPopUp.addEventListener('click', function(){
   popUp.classList.add('popUpPedidoNone')
 })
 
-//função para aparcer div com scrollY
-var shadowHeader = document.querySelector('#header')
-window.addEventListener('scroll', function(){
-  if (window.scrollY > 64) {
-    shadowHeader.classList.add('headerShadow')
-  } else {
-    shadowHeader.classList.remove('headerShadow')
-  }
-})
 
 //Promoções
 let promocoes = [
@@ -89,20 +80,70 @@ let promocoes = [
     quantidade: 0
   }
 ]
-
 function promocao(){
   const cards = document.getElementById('cards')
 
   promocoes.forEach(value => {
     cards.innerHTML += `
-      <a class="cardPromotion">
+      <a class="cardPromotion observerNone">
         <img src="assets/images/`+value.image+`" alt="">
         <h2>`+value.name+`</h2>
-        `+value.description+`
-        <strong>`+value.price+`,00</strong>
-        <p class="">Peça Já!</p>
+        <div class="descricao">`+value.description+`</div>
+        <strong>R$`+value.price+`,00</strong>
+        <p>Peça Já!</p>
       </a>
     `
   });
 }
 promocao()
+
+//função para shadow Header
+var shadowHeader = document.querySelector('#header')
+window.addEventListener('scroll', function(){
+  if (window.scrollY > 64) {
+    shadowHeader.classList.add('headerShadow')
+  } else {
+    shadowHeader.classList.remove('headerShadow')
+  }
+})
+
+//Observar título promoções
+const title = document.querySelector('.titlePromocoes')
+const observerTitle = new IntersectionObserver((value) => {
+  value.forEach(element => {
+    if (element.isIntersecting) {
+      title.classList.remove('observerNone')
+    }else{
+      title.classList.add('observerNone')
+    }
+  });
+})
+observerTitle.observe(title)
+
+//Observar promoções
+const promotions = document.querySelectorAll('.cardPromotion')
+const observerPromotions = new IntersectionObserver((value) => {
+  value.forEach(element => {
+    if (element.isIntersecting) {
+      element.target.classList.remove('observerNone')
+    }else{
+      element.target.classList.add('observerNone')
+    }
+  });
+})
+promotions.forEach(element => {
+  observerPromotions.observe(element)
+});
+
+//Observar Contato
+const contact = document.querySelector('.contato')
+const observer = new IntersectionObserver((value) => {
+  value.forEach(element => {
+    if (element.isIntersecting) {
+      contact.classList.remove('observerNone')
+    }else{
+      contact.classList.add('observerNone')
+    }
+  });
+})
+observer.observe(contact)
