@@ -289,12 +289,12 @@ header, main, footer{
 /* Animação conteúdo principal*/
 .animationStart{
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateX(-1rem);
     transition: opacity 2s ease-out, transform 2s ease-out;
 }
 .visible{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 main{
     margin-top: 4rem;
@@ -376,6 +376,11 @@ main{
     margin: 3rem 0rem;
     text-align: center;
 }
+.titlePromocoes{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s ease-in;
+}
 #cards{
     min-width: 100%;
     padding: var(--border-min);
@@ -398,9 +403,10 @@ main{
     gap: .7rem;
     min-width: 150px;
     color: var(--color-text);
-    box-shadow: var(--shadow-simples);
     margin-bottom: 3rem;
-    transition: transform .2s;
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s ease-in;
 }
 .cardPromotion img{
     position: absolute;
@@ -409,7 +415,6 @@ main{
     height: 160px;
     width: 160px;
     background-color: #a1a1a1;
-    box-shadow: var(--shadow-simples);
     transition: transform .2s;
 }
 .cardPromotion h2{
@@ -419,6 +424,8 @@ main{
 }
 .cardPromotion strong{
     margin-bottom: 3.5rem;
+    bottom: 0;
+    position: absolute;
 }
 .cardPromotion p{
     position: absolute;
@@ -430,6 +437,9 @@ main{
     padding: var(--padding-button);
     box-shadow: var(--shadow-simples);
     transition: transform .2s;
+}
+.descricao{
+    margin-bottom: 5rem;
 }
 .cardPromotion img:hover,
 .cardPromotion p:hover,
@@ -444,6 +454,9 @@ main{
     align-items: center;
     flex-direction: column;
     padding: 1rem 1rem 4rem 1rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s ease-in;
 }
 .redeSocial{
     display: flex;
@@ -522,4 +535,8 @@ footer{
 }
 .displayNone{
     display: none;
+}
+.observerNone{
+    opacity: 0;
+    transform: translateX(-1rem);
 }
