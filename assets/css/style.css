@@ -35,6 +35,7 @@
     --border-button: 4rem;
     --padding-button: .5rem 1rem;
 
+    /* Sombras */
     --shadow-simples: 0 4px 8px rgba(0, 0, 0, .1);
 }
 /* Responsive typography */
@@ -117,10 +118,6 @@ header, main, footer{
     width: 80%;
 }
 /* Classes reutilizadas */
-.container{
-    max-width: 1120px;
-    margin-inline: 1.5rem;
-}
 .grid{
     display: grid;
     gap: 1.5rem;
@@ -233,6 +230,9 @@ header, main, footer{
     position: relative;
     font-size: var(--h3-font-size);
 }
+.navLink:hover{
+    cursor: pointer;
+}
 .navLink::after{
     font-size: var(--h3-font-size);
     content: '';
@@ -245,7 +245,7 @@ header, main, footer{
     transition: width .3s;
 }
 .navLink:hover::after{
-    width: 60%;
+    width: 2rem;
 }
 .menuBar, .menu2Header{
     display: none;
@@ -297,9 +297,7 @@ header, main, footer{
     transform: translateX(0);
 }
 main{
-    margin-top: 4rem;
-    height: 100%;
-    min-height: 100%;
+    margin-top: 4.01rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,7 +319,7 @@ main{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 50rem;
 }
 .pTextHome{
     margin-bottom: 5rem;
@@ -330,9 +328,10 @@ main{
     font-size: var(--biggest-font-size);
     color: var(--color-text);
     margin-bottom: .7rem;
+    font-family: var(--body-font);
 }
 .imgHome{
-    max-width: 500px;
+    max-width: 30rem;
     animation: hamburguerDeg infinite 5s ease-in-out;
 }
 .imgHome img{
@@ -350,6 +349,7 @@ main{
     padding: .5rem 1rem;
     font-family: var(--second-font);
     font-size: var(--normal-font-size);
+    transition: .3s ease-in-out;
     animation: buttonCardapio infinite 2s ease-in-out;
 }
 .sombra{
@@ -365,18 +365,19 @@ main{
     z-index: -1;
 }
 .promocoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     background: none;
 }
-.promocoes h1{
+.titlePromocoes{
     font-size: var(--biggest-font-size);
     color: var(--color-text);
     font-family: var(--body-font);
     padding: 1rem;
     margin: 3rem 0rem;
     text-align: center;
-}
-.titlePromocoes{
     opacity: 1;
     transform: translateX(0);
     transition: 1s ease-in;
@@ -402,8 +403,8 @@ main{
     align-items: center;
     gap: .7rem;
     min-width: 150px;
-    color: var(--color-text);
     margin-bottom: 3rem;
+    color: var(--color-text);
     opacity: 1;
     transform: translateX(0);
     transition: 1s ease-in;
@@ -415,7 +416,7 @@ main{
     height: 160px;
     width: 160px;
     background-color: #a1a1a1;
-    transition: transform .2s;
+    transition: transform .3s;
 }
 .cardPromotion h2{
     margin-top: 140px;
@@ -436,15 +437,23 @@ main{
     border-radius: var(--border-button);
     padding: var(--padding-button);
     box-shadow: var(--shadow-simples);
-    transition: transform .2s;
+    transition: transform .3s ease-in-out;
 }
 .descricao{
     margin-bottom: 5rem;
 }
 .cardPromotion img:hover,
-.cardPromotion p:hover,
-.cardPromotion:hover{
+.cardPromotion p:hover{
     transform: scale(1.03);
+}
+#buttonPromocoes{
+    display: grid;
+    place-items: center;
+    background: var(--color-secundary);
+    padding: 1rem 3rem;
+    border-radius: var(--border-button);
+    margin-bottom: 3rem;
+    font-family: var(--second-font);
 }
 .contato{
     overflow: hidden;
@@ -453,22 +462,41 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1rem 1rem 4rem 1rem;
+    padding: 1rem;
     opacity: 1;
     transform: translateX(0);
     transition: 1s ease-in;
+}
+#horaFuncionamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto auto 4rem auto;
+    font-family: var(--second-font);
+}
+#horaFuncionamento table{
+    border-collapse: collapse;
+}
+#horaFuncionamento tr td{
+    text-align: left;
+    padding: .5rem 1rem;
+}
+#horaFuncionamento tr td{
+    border-bottom: 1px solid gray;
 }
 .redeSocial{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: .2rem auto 2rem auto;
+    margin: .3rem auto 2rem auto;
 }
 .redeSocial a{
     width: 100%;
     height: 100%;
-    transition: transform .2s;
+    transition: transform .3s;
     background: var(--color-text);
     border-radius: var(--border-button);
     padding: .5rem;
@@ -492,8 +520,8 @@ main{
     background: var(--color-text);
     padding: var(--padding-button);
     border-radius: var(--border-button);
-    margin-top: 2rem;
-    transition: transform .2s;
+    margin: 2rem auto;
+    transition: transform .3s;
 }
 .buttonContactWhats img{
     width: var(--small-font-size);
@@ -507,9 +535,42 @@ main{
     bottom: 0;
     height: 10%;
 }
+.sobre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 1.5rem;
+    min-height: calc(100vh - 10rem);
+    margin-top: 4.01rem;
+}
+.sobreText{
+    position: relative;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50rem;
+}
+.sobreTitle{
+    font-size: var(--biggest-font-size);
+    color: var(--color-text);
+    margin-bottom: .7rem;
+    font-family: var(--body-font);
+}
+.sobreImage{
+    max-width: 30rem;
+    background-color: rgb(128, 128, 128, .2);
+    border-radius: var(--border-max);
+}
 /* Rodapé */
 footer{
-    height: 8rem;
+    width: 100%;
+    height: 6rem;
 }
 .footer{
     background: none;
@@ -520,18 +581,18 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
-.footerLogo{
-    font-size: var(--h1-font-size);
-    font-family: var(--body-font);
+.footer span{
+    display: flex;
+    flex-direction: row;
 }
-
 
 .activeLink::after{
-    width: 60%;
+    width: 2rem;
 }
 .menu2Header ul li .activeLink::after{
-    width: 60%;
+    width: 2rem;
 }
 .displayNone{
     display: none;
@@ -540,3 +601,8 @@ footer{
     opacity: 0;
     transform: translateX(-1rem);
 }
+
+/* .textAndImgHome, .promocoes,
+.contato, .sobre{
+    border: 1px solid red;
+} */
