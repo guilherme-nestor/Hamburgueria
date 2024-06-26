@@ -21,11 +21,11 @@
         <img src="assets/icons/x-solid.svg">
       </div>
       <div class="titlePopUp">Faça agora seu pedido!</div>
-      <a href="#" class="buttonPopUp buttonPopUpWhats">
+      <a id="WhatsLink" href="" class="buttonPopUp buttonPopUpWhats">
         <img src="assets/icons/whatsapp.svg">
         <div>WhatsApp</div>
       </a>
-      <a href="#" class="buttonPopUp buttonPopUpIfood">
+      <a id="iFoodLink" href="" class="buttonPopUp buttonPopUpIfood">
         <img src="assets/icons/ifood.svg">
         <div>iFood</div>
       </a>
@@ -40,16 +40,19 @@
         <div class="menuHeader">
           <ul>
             <li>
-              <a class="navLink activeLink" href="">Home</a>
+              <div class="navLink" id="home">Home</div>
             </li>
             <li>
-              <a class="navLink" href="">Contato</a>
+              <div class="navLink" id="promocoes">Promoções</div>
             </li>
             <li>
-              <a class="navLink" href="">Cardápio</a>
+              <div class="navLink" id="contato">Contato</div>
             </li>
             <li>
-              <a class="navLink" href="">Sobre</a>
+              <div class="navLink" id="sobre">Sobre</div>
+            </li>
+            <li>
+              <div class="navLink" id="cardapio">Cardápio</div>
             </li>
           </ul>
         </div>
@@ -60,16 +63,20 @@
         <div class="menu2Header menu2HeaderNone">
           <ul>
             <li>
-              <a class="navLink activeLink" href="">Home</a>
+              <!-- <a class="navLink activeLink" id="home2" href="">Home</a> -->
+              <div class="navLink activeLink" id="home2">Home</div>
             </li>
             <li>
-              <a class="navLink" href="">Contato</a>
+              <div class="navLink" id="promocoes2">Promoções</div>
             </li>
             <li>
-              <a class="navLink" href="">Cardápio</a>
+              <div class="navLink" id="contato2">Contato</div>
             </li>
             <li>
-              <a class="navLink" href="">Sobre</a>
+              <div class="navLink" id="sobre2">Sobre</div>
+            </li>
+            <li>
+              <div class="navLink" id="cardapio2">Cardápio</div>
             </li>
           </ul>
         </div>
@@ -79,7 +86,7 @@
     <!-- Conteúdo principal -->
     <main>
       <div class="main">
-        <div class="textAndImgHome">
+        <div class="textAndImgHome" id="mainHome">
           <div class="textHome">
             <div class="titleTextHome animationStart">
               Aquele Hambúrguer <br> Saboroso!
@@ -94,24 +101,79 @@
             <div class="sombra"></div>
           </div>
         </div>
-        <div class="promocoes">
-          <h1 class="titlePromocoes observerNone">Combos para o fim de semana</h1>
+        <div class="promocoes" id="mainPromocoes">
+          <h1 class="titlePromocoes observerNone">Promoções para o fim de semana</h1>
           <!-- Promoções -->
           <div id="cards"></div>
+          <div id="buttonPromocoes">Confira o cardápio completo</div>
         </div>
-        <div class="contato observerNone">
+        <div class="contato" id="mainContato">
+          <div id="horaFuncionamento">
+            <h2>Horário de Funcionamento</h2>
+            <table>
+              <tr>
+                <td>Terça</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Quarta</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Quinta</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Sexta</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Domingo</td>
+                <td>18:00</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Segunda</td>
+                <td>Fechado</td>
+              </tr>
+            </table>
+          </div>
           <h2>Siga-nos</h2>
           <div class="redeSocial">
-            <a href="#"><img src="assets/icons/Instagram_Logo_2022.svg" alt=""></a>
-            <a href="#"><img src="assets/icons/whatsapp.svg" alt=""></a>
-            <a href="#"><img src="assets/icons/ifood.svg" alt=""></a>
+            <a id="InstaLink" href=""><img src="assets/icons/Instagram-F1C40F.svg" alt=""></a>
+            <a id="iFoodLink" href=""><img src="assets/icons/ifood-F1C40F.svg" alt=""></a>
           </div>
           <h2>Telefone:</h2>
-          <p>11 0000-0000</p>
-          <a href="#" class="buttonContactWhats">
-            <img src="assets/icons/whatsapp.svg">
+          <p id="fone"></p>
+          <a id="WhatsLink" href="" class="buttonContactWhats">
+            <img src="assets/icons/whatsapp-F1C40F.svg">
             <div>WhatsApp</div>
           </a>
+        </div>
+        <div class="sobre" id="mainSobre">
+          <div class="sobreText">
+            <em>Cardápio para todos os gostos...</em>
+            <h1 class="sobreTitle">A hamburgueria tal é...</h1>
+            <p>
+              Aqui vai um texto falando sobre o estabelecimento:
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque itaque nisi voluptatem ipsa natus blanditiis, culpa veritatis ipsum illo accusantium ut possimus cupiditate enim laudantium non, quaerat pariatur maiores perferendis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque itaque nisi voluptatem ipsa natus blanditiis, culpa veritatis ipsum illo accusantium ut possimus cupiditate enim laudantium non, quaerat pariatur maiores perferendis.
+            </p>
+          </div>
+          <div class="sobreImage">
+            <img src="assets/images/burger_sandwich_PNG4135.png" alt="">
+          </div>
         </div>
       </div>
     </main>
@@ -119,10 +181,11 @@
     <!-- Rodapé -->
     <footer>
       <div class="footer">
-        <a href="" class="footerLink">Terms & Agreements</a>
-        <a href="" class="footerLink">Privacy Policy</a>
+        <a href="#" class="footerLink">Terms & Agreements</a>
+        <a href="#" class="footerLink">Privacy Policy</a>
         <span>
-          &#169; All Rights Reserved By Guilherme Nestor
+          <div>&#169; All Rights Reserved By&nbsp;</div>
+          <div id="estabelecimento"></div>
         </span>
       </div>
     </footer>
