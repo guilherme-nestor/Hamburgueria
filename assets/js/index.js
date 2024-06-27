@@ -10,7 +10,7 @@ const instagram = ''
 /***************************************/
 const telefoneFormatado = `(`+telefone.substring(0, 2)+`) `+telefone.substring(2, 7)+`-`+telefone.substring(7)+``
 const iFoodLink = 'https://www.ifood.com.br/'
-const whatsLink = 'https://wa.me/' + telefone
+const whatsLink = 'https://wa.me/55' + telefone
 const instaLink = 'https://www.instagram.com/' + instagram
 const msgPedido = 'Olá, gostaria de pedir um'
 //Função de rolagem menu superior
@@ -132,7 +132,7 @@ fecharPopUp.addEventListener('click', function(){
 let promocoes = [
   {
     id: 1,
-    image: 'default.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo individual',
     description: '1 baguncinha <br> 1 refrigerante lata <br> 1 batata mini',
     price: 20,
@@ -140,7 +140,7 @@ let promocoes = [
   },
   {
     id: 2,
-    image: 'default.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo da casa',
     description: '1 X-da casa <br> 1 refrigerante lata <br> 1 batata pequena com cheedar',
     price: 20,
@@ -148,7 +148,7 @@ let promocoes = [
   },
   {
     id: 3,
-    image: 'default.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo para dividir',
     description: '2 baguncinha <br> 2 refrigerante lata <br> 1 batata pequena com cheedar',
     price: 20,
@@ -156,7 +156,7 @@ let promocoes = [
   },
   {
     id: 4,
-    image: 'default.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo casal',
     description: '2 X-da casa <br> 1 Coca cola 1,5L <br> 1 batata pequena com cheedar',
     price: 20,
@@ -164,7 +164,7 @@ let promocoes = [
   },
   {
     id: 5,
-    image: 'Logo.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo pra galera',
     description: '3 baguncinha <br> 1 Coca cola 1,5L <br> 1 batata pequena com cheedar',
     price: 20,
@@ -172,7 +172,7 @@ let promocoes = [
   },
   {
     id: 6,
-    image: 'Logo.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo pra geral',
     description: '4 baguncinha <br> 1 Coca cola 1,5L <br> 1 batata pequena com cheedar',
     price: 20,
@@ -180,7 +180,7 @@ let promocoes = [
   },
   {
     id: 7,
-    image: 'Logo.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo amizade',
     description: '5 baguncinha <br> 1 Coca cola 1,5L <br> 1 batata pequena com cheedar',
     price: 20,
@@ -188,7 +188,7 @@ let promocoes = [
   },
   {
     id: 8,
-    image: 'Logo.png',
+    image: 'burger_sandwich_PNG4135.png',
     name: 'Combo Miague Tradicional',
     description: '3 baguncinha <br> 1 porção grande de calabresa acebolada <br> 1 porção grande de batata com cheddar e bacon',
     price: 20,
@@ -202,6 +202,7 @@ function promocao(){
     cards.innerHTML += `
       <a href="https://wa.me/55`+telefone+`?text=Olá, `+msgPedido+` `+value.name+`" class="cardPromotion observerNone" target="_blank">
         <img src="assets/images/`+value.image+`" alt="">
+        <div class="sombraImgCardPromotion"></div>
         <h2>`+value.name+`</h2>
         <div class="descricao">`+value.description+`</div>
         <strong>R$`+value.price+`,00</strong>
@@ -276,7 +277,6 @@ const idSobre2 = document.getElementById('sobre2')
 const observerSobre = new IntersectionObserver((value) => {
   value.forEach(element => {
     if(element.isIntersecting) {
-      mainSobre.classList.remove('observerNone')
       idSobre.classList.add('activeLink')
       idSobre2.classList.add('activeLink')
     }else{
