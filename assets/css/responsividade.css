@@ -141,6 +141,10 @@ Extra     extra large	xxl	≥1400px
     .sobreImage{
         width: 100%;
     }
+    .sombraImgCardPromotion{
+        top: 5.6rem;
+        width: 6rem;
+    }
 }
 
 @media (min-width: 1199.99px) {
